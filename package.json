@@ -1,0 +1,16 @@
+{
+  "name": "agent-conf",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Daniel Roe <daniel@roe.dev>",
+  "dependencies": {
+    "@picocss/pico": "^1.5.7"
+  },
+  "devDependencies": {
+    "@types/node": "^18.14.0",
+    "prettier": "^2.8.4"
+  }
+}
