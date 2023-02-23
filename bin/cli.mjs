@@ -12,6 +12,7 @@ import {
 import { loadConfig } from 'c12'
 import { createServer, build as buildVite } from 'vite'
 import { defineLazyEventHandler, defineEventHandler, fromNodeMiddleware } from 'h3'
+import { writeTypes } from 'nitropack'
 
 async function main() {
   const args = mri(process.argv.slice(2))
@@ -109,6 +110,7 @@ async function main() {
       ...(config.nitro ?? {}),
     })
     await prepare(nitro)
+    await writeTypes(nitro)
 
     await buildVite({
       build: {
