@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "./bin/cli.mjs build",
+    "dev": "./bin/cli.mjs dev"
   },
   "author": "Daniel Roe <daniel@roe.dev>",
   "dependencies": {
