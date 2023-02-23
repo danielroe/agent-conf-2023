@@ -108,6 +108,7 @@ async function main() {
       },
       ...(config.nitro ?? {}),
     })
+    await prepare(nitro)
 
     await buildVite({
       build: {
@@ -118,7 +119,6 @@ async function main() {
 
     const template = await nitro.storage.getItem('build:client:index.html')
     await nitro.storage.setItem('templates:index.html', template)
-    await prepare(nitro)
     await copyPublicAssets(nitro)
 
     await prerender(nitro)
