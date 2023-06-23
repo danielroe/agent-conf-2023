@@ -54,6 +54,13 @@ async function main() {
             route: '/**',
           },
         ],
+        bundledStorage: ['templates'],
+        devStorage: {
+          templates: {
+            driver: 'fs',
+            base: '.nitro/templates',
+          },
+        },
         devHandlers: [
           {
             route: '/__vite',
@@ -100,13 +107,6 @@ async function main() {
     const nitro = await createNitro({
       rootDir,
       dev: false,
-      bundledStorage: ['templates'],
-      devStorage: {
-        templates: {
-          driver: 'fs',
-          base: '.nitro/templates',
-        },
-      },
       ...(config.nitro ?? {}),
     })
     await prepare(nitro)
